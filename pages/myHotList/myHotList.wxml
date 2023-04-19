@@ -1,0 +1,46 @@
+<!-- 热门推荐 -->
+<block wx:if='{{productList.length}}'>
+  <view class='commoduty'>
+      <view class='container'>
+        <view bindtap='enterDetail' class='list clearfix {{productList.length-1 == index? "" : "xpk-1px-b"}}' wx:for="{{productList}}" wx:key="item" data-id='{{item.id}}' data-ishop="{{isShoper ? 'yes' : 'no'}}">
+          <view class='pic-discr'>
+            <image lazy-load="{{true}}" mode='aspectFill' src="{{item.listCoverImage}}"></image>
+            <text>{{item.departure == '多地出发' ? item.departure: item.departure + '出发'}}</text>
+          </view>
+          <view wx:if="{{isShoper}}" class='info-con'>
+            <view class='info-cons'>
+              <text class='info-tit text-2-eclips'>{{item.name}}</text>
+              <view class='info-price'>
+                <text wx:if="{{isShoper}}" class='price shop-price'>价格:￥{{item.realPrice}}</text>
+                <text wx:else class='price'>￥{{item.realPrice}}</text>
+              </view>
+              <view wx:if="{{item.minCommission == item.maxCommission}}" class='commiss-con'>
+                  佣金：<text>￥{{item.maxCommission}}</text>
+              </view>
+              <view wx:else class='commiss-con'>
+                  佣金：<text>¥{{item.minCommission}}~￥{{item.maxCommission}}</text>
+              </view>
+            </view>
+          </view>
+          <view wx:else class='info-con'>
+            <view class='info-cons'>
+                <text class='info-tit text-2-eclips'>{{item.name}}</text>
+                <text class='info-time'>{{item.minDepartureDate}} 至 {{item.maxDepartureDate}}出发</text>
+                <view class='info-price'>
+                  <text class='price'>￥{{item.realPrice}}</text>
+                  <text wx:if="{{item.less != ''}}" class='reduce'>立省{{item.less}}元</text>
+                </view>
+              </view>
+            </view>
+          </view>
+      </view>
+    </view> 
+
+  <view wx:if="{{!hasMore}}" class='no-more'>已经到底了~</view>
+</block>
+  
+
+  <view wx:else class='no-render'>
+    <image src='../../images/icons/ej_kym@3x.svg' mode='aspectFit' class='icon'></image>
+    <text class='text'>暂无数据</text>
+  </view>

@@ -1,0 +1,55 @@
+<!-- 会议 -->
+<!-- 头部菜单 -->
+<view class='menu'>
+  <scroll-view  class="nav-container" scroll-x="true" style=" white-space: nowrap;"  wx:if="{{menu != '' }}">
+    <text class="sel sel_{{thisNav}}"></text>
+    <view data-id="{{item.id}}" bindtap='screen' data-index='{{index}}' wx:for='{{menu}}' wx:key='item' class='{{thisNav ==index?"sel_color":""}}'>
+      <text class='{{thisNav ==index?"sel_color":""}}'>{{item.name}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+<view wx:if="{{isLoad}}">
+  <block wx:if="{{productList.length}}">
+    <view class='commoduty'>
+      <view class='container'>
+        <view bindtap='enterDetail' class='list clearfix' wx:for="{{productList}}" wx:key="item" data-id='{{item.id}}'>
+          <view class='list-con'>
+            <view class='pic-discr'>
+              <view class='yuding'>{{item.bookingNum}}人预订</view>
+              <image lazy-load="{{true}}" mode='aspectFill' src="{{item.venueCoverImageIds}}"></image>
+              <view class='text'>
+                <view class='text-con'>
+                  <text class="money">¥{{item.realPrice}}起</text>
+                  <text class='nums'>可容纳{{item.capacity}}人</text>
+                </view>
+              </view>
+            </view>
+            <view class='info-con'>
+              <view class='info-cons'>
+                <text class='info-tit text-1-eclips'>{{item.name}}</text>
+                <view class='info-item info-item-f'>
+                  <text class='info-ico yeallow'>位置</text>
+                  <view>{{item.address}}</view>
+                </view>
+                <view class='info-item'>
+                  <text class='info-ico mainBgColor'>特色</text>
+                  <view>{{item.features}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{!hasMore}}" class='no-more'>已经到底了~</view>
+
+  </block>
+    
+
+    <view wx:else class='no-render'>
+      <image src='../../images/icons/ej_kym@3x.svg' mode='aspectFit' class='icon'></image>
+      <text class='text'>暂无数据</text>
+    </view>
+</view>

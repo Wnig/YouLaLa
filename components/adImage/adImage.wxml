@@ -1,0 +1,37 @@
+<!-- components/adImage.wxml -->
+<view wx:if="{{mode=='widthFix'}}" class="component-adImage">
+    <!-- status为空禁用状态只显示图片不可点击 -->
+    <image wx:if="{{!item.status || item.type == ''}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+    <!-- 启用状态显示图片点击跳转 -->
+    <image wx:if="{{item.status&&item.type=='1'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' bindtap='enterAd' data-current='{{item}}'></image>
+    <!-- 启用状态type为2跳转商品 -->
+    <image wx:if="{{item.status&&item.type=='2'&&item.productStatus=='1'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}' bindtap='enterAd'></image>
+    <!-- type为2禁用状态时显示图片点击跳转 -->
+    <image wx:if="{{item.status&&item.type=='2'&&item.productStatus=='0'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+    <!-- 启用状态type为3跳转小程序首页 -->
+    <navigator class="navigator" wx:if="{{item.status&&item.type=='3'}}" target="miniProgram" hover-class="none" open-type="navigate" app-id="{{item.content}}" path="pages/index/index" version="trial">
+      <image src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+    </navigator>
+     <!-- 启用状态type为4跳转会展 -->
+    <image wx:if="{{item.status&&item.type=='4'&&item.venueStatus=='1'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' bindtap='enterAd' data-current='{{item}}'></image>
+    <!-- type为4禁用状态时显示图片点击跳转 -->
+    <image wx:if="{{item.status&&item.type=='4'&&item.venueStatus=='0'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+</view>
+<view wx:else class="component-adImage">
+    <!-- status为空禁用状态只显示图片不可点击 -->
+    <image wx:if="{{!item.status || item.type == ''}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+    <!-- 启用状态显示图片点击跳转 -->
+    <image wx:if="{{item.status&&item.type=='1'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' bindtap='enterAd' data-current='{{item}}'></image>
+    <!-- 启用状态type为2跳转商品 -->
+    <image wx:if="{{item.status&&item.type=='2'&&item.productStatus=='1'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}' bindtap='enterAd'></image>
+    <!-- type为2禁用状态时显示图片点击跳转 -->
+    <image wx:if="{{item.status&&item.type=='2'&&item.productStatus=='0'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+    <!-- 启用状态type为3跳转小程序首页 -->
+    <navigator class="navigator" wx:if="{{item.status&&item.type=='3'}}" target="miniProgram" hover-class="none" open-type="navigate" app-id="{{item.content}}" path="pages/index/index" version="trial">
+      <image src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+    </navigator>
+    <!-- 启用状态type为4跳转会展 -->
+    <image wx:if="{{item.status&&item.type=='4'&&item.venueStatus=='1'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' bindtap='enterAd' data-current='{{item}}'></image>
+    <!-- type为4禁用状态时显示图片点击跳转 -->
+    <image wx:if="{{item.status&&item.type=='4'&&item.venueStatus=='0'}}" src='{{item.adImageUrl}}' mode='aspectFill' class='adImg' data-current='{{item}}'></image>
+</view>

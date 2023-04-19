@@ -1,0 +1,7 @@
+<view class='part1 xpk-1px-t'>
+  <image mode='widthFix' src='../../images/sample/fkcg@3x.svg' class='icon'></image>
+  <text class='text'>恭喜你提交成功！</text>
+  <text class='text'>我们将会在48小时内联系你</text>
+  <!-- <view class='btn' bindtap='previewCode'>体验悠易游</view> -->
+  <view class='btn mainBgColor' bindtap='backhome'>返回首页</view>
+</view>

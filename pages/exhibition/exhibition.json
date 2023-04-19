@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "会展",
+  "navigationBarBackgroundColor": "#00CC9D",
+  "navigationBarTextStyle": "#fff",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f5f5f5",
+  "usingComponents": {
+    "exad-image": "../../components/exadImage/exadImage"
+  }
+}

@@ -1,0 +1,8 @@
+/* components/adImage.wxss */
+.component-adImage,.cover-img,.navigator{
+    width: 100%;
+    height: 100%;
+}
+.adImg{
+    width: 100%;
+}

@@ -1,0 +1,85 @@
+{
+  "pages": [
+   
+    "pages/index/index",
+    "pages/generalize/generalize",
+    "pages/myWallet/myWallet",
+    "pages/confirmOrder/confirmOrder",
+    "pages/orderDetail/orderDetail",
+    "pages/order/order",
+    "pages/creatingShop/creatingShop",
+    "pages/my/my",
+    "pages/orderTips/orderTips",
+    "pages/details/details",
+    "pages/classifyItem/classifyItem",
+    "pages/shop/shop",
+    "pages/myShop/myShop",
+    "pages/selCourse/selCourse",
+    "pages/evaluate/evaluate",
+    "pages/collection/collection",
+    "pages/awardDetail/awardDetail",
+    "pages/propertyDetail/propertyDetail",
+    "pages/withdrawDetail/withdrawDetail",
+    "pages/withdraw/withdraw",
+    "pages/freeOpen/freeOpen",
+    "pages/freeOpenDetail/freeOpenDetail",
+    "pages/createSuccess/createSuccess",
+    "pages/bindingInfo/bindingInfo",
+    "pages/setingShop/setingShop",
+    "pages/addedGoods/addedGoods",
+    "pages/todayBifa/todayBifa",
+    "pages/howToDetail/howToDetail",
+    "pages/howTo/howTo",
+    "pages/shareFriendList/shareFriendList",
+    "pages/share/share",
+    "pages/login/login",
+    "pages/myFriendShop/myFriendShop",
+    "pages/myFans/myFans",
+    "pages/detailForShareList/detailForShareList",
+    "pages/detailForevaluate/detailForevaluate",
+    "pages/about/about",
+    "pages/search/search",
+    "pages/ad/ad",
+    "pages/friendShare/friendShare",
+    "pages/orderCancelDetail/orderCancelDetail",
+    "pages/exhibition/exhibition",
+    "pages/exhibitionDetail/exhibitionDetail",
+    "pages/location/location",
+    "pages/hotList/hotList",
+    "pages/myHotList/myHotList",
+    "pages/openBusiness/openBusiness",
+    "pages/openBusinessRes/openBusinessRes",
+    "pages/meeting/meeting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#C1C1C1",
+    "selectedColor": "#00CC9D",
+    "backgroundColor": "#FFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar/sy@3x.png",
+        "selectedIconPath": "images/tabBar/sy_xz@3x.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "分享客",
+        "iconPath": "images/tabBar/fxk@3x.png",
+        "selectedIconPath": "images/tabBar/fxk_xz@3x.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tabBar/wd@3x.png",
+        "selectedIconPath": "images/tabBar/wd_xz@3x.png"
+      }
+    ]
+  }
+}

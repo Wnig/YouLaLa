@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#00CC9D",
+  "navigationBarTitleText": "分享砍价",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "ad-image": "../../components/adImage/adImage"
+  }
+}

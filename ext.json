@@ -1,0 +1,11 @@
+{
+  "extEnable": false,
+  "extAppid": "wx7965fc4fa5e89f8a",
+  "ext": {
+    "businessId": "05a7bb8b454d4798b21f8fa835d6f36c",
+    "userVersion":"1.1.1"
+  },
+  "extPages": {
+    "pages/index/index": {}
+  }
+}

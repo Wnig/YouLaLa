@@ -1,0 +1,88 @@
+<form report-submit="true" bindsubmit="postForm">
+  <button id="postForm" form-type="submit"></button>
+  <label for='postForm'>
+  <block wx:if="{{isLoad}}">
+    <block>
+      <view class="pic-ico">
+        <image bindtap='openMask' src='../../images/sample/fx@3x.svg'></image>
+      </view>
+      <view class='pic-show'>
+        <swiper bindchange='onSlideChangeEnd' autoplay='{{banner.autoplay}}' interval='{{banner.interval}}' circular='{{banner.circular}}' duration='{{banner.duration}}' class='banner'>
+          <swiper-item wx:for="{{venueList.slideImages}}" wx:key="{{item}}"  item-id='{{index}}' class='banner-item'>
+            <image lazy-load="{{true}}" src='{{item}}' mode='aspectFit' class='cover-img' bindtap='previewEvaImg' data-curr='{{item}}' data-imgs='{{venueList.slideImages}}' data-current='{{item}}'></image>
+          </swiper-item>
+        </swiper>
+        <view class="pages">{{current}}/{{venueList.slideImages.length}}</view>
+      </view>
+    </block> 
+
+    <!--商品信息 -->
+    <view class='base-info'>
+      <view class='part1'>
+        <view class='price'>
+          <text class='rmb'>￥</text>
+          <text class='sell-price'>{{venueList.realPrice}}</text>
+          <text class='qi'>起</text>
+        </view>
+      </view>
+      <view class='part2'>{{venueList.name}}</view>
+      <view class='part3'>
+        <view class='time'>可容人数{{venueList.capacity}}人</view>
+        <view class='buy-num'>{{venueList.bookingNum}}人预订</view>
+      </view>
+    </view>
+
+    <view class='info-con'>
+      <view class='info-item xpk-1px-b' bindtap='enterPage'>
+        <text class='info-ico yeallow'>位置</text>
+        <view>{{venueList.address}}</view>
+        <icon class='icon-jt'></icon>
+      </view>
+      <view class='info-item'>
+        <text class='info-ico mainBgColor'>特色</text>
+        <view>{{venueList.features}}</view>
+      </view>
+    </view>
+
+    <!--图文详情  -->
+    <view class='good-details'>
+      <view class='title'>
+        <image lazy-load="{{true}}" class='line' src='../../images/sample/zsx-l@3x.png' mode='widthFix'></image>
+        <text class='text'>图文详情</text>
+        <image lazy-load="{{true}}" class='line' src='../../images/sample/zsx-r@3x.png' mode='widthFix'></image>
+      </view>
+      <view class='main'>
+        <image lazy-load="{{true}}" wx:for="{{venueList.detailImages}}" wx:key="item" src='{{item}}' mode='widthFix' bindtap='previewEvaImg' data-curr='{{item}}' data-imgs='{{venueList.detailImages}}' data-current='{{item}}'></image>
+      </view>
+    </view>
+
+    <!--底部栏 -->
+    <view class='footer'>
+      <view bindtap='booking' class='btns purchase mainBgColor'>
+        <text>预订热线</text> 
+      </view>
+    </view>
+
+    <!--分享  -->
+    <view class='mask' wx:if="{{isMask}}">
+      <view class='mask-bg' catchtap='maskShow'></view>
+      <view class='share'>
+        <view class='title'>请选择 <icon class='icon-gb2' catchtap='maskShow'></icon></view>
+        <view class='share-con'>
+          <view class='item'>
+            <button class='share-btn' open-type="share"></button>
+            <image src='../../images/icons/wx@3x.svg'></image>
+            <text>生成链接，发送好友</text>
+          </view>
+          <view class='item' catchtap="share">
+            <image src='../../images/icons/sc@3x.svg'></image>
+            <text>生成图片，发朋友圈</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <canvas canvas-id="myCanvas" hidden="true" style="width:375px;height:580px;position:absolute;z-index:-100"/>
+</block>
+</label>
+</form>

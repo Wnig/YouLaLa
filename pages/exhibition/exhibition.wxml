@@ -1,0 +1,82 @@
+
+<view wx:if="{{isLoad}}">
+  <block wx:if="{{isAdd}}">
+    <view class="banner">
+      <swiper bindchange='onSlideChangeEnd' id="swiper" indicator-dots="{{indicatorDots}}" circular='{{circular}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{adList}}" wx:key="item">
+          <swiper-item>
+            <exad-image item="{{item}}" ></exad-image>
+            <!-- <image catchtap='enterAd' lazy-load="{{true}}" mode='aspectFill' src="{{item.adImageUrl}}" class="slide-image" width="355" height="150" data-type="{{item.type}}" data-id="{{item.id}}" /> -->
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 每日优选 -->
+    <view class='classify' wx:if="{{categoryList != ''}}">
+      <view class='menu clearfix'>
+        <view class='item'  bindtap='enterPage' wx:for="{{categoryList}}" wx:key="{{item}}" data-id="{{item.id}}" data-name="{{item.name}}">
+          <image lazy-load="{{true}}" class='pic' mode='scaleToFill' src='{{item.imageId}}'></image>
+          <text class='text text-1-eclips'>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+
+    <block wx:if="{{productList != ''}}">
+      <view class='commoduty'>
+        <view class='title'>
+          <view class='part1'>
+            <image mode='aspectFill'  src="../../images/icons/rm@3x.svg"></image>
+            <text class='text'>热门推荐</text>
+          </view>
+        </view>
+        <view class='container'>
+          <view bindtap='enterDetail' class='list clearfix' wx:for="{{productList}}" wx:key="item" data-id='{{item.id}}'>
+            <view class='list-con'>
+              <view class='pic-discr'>
+                <view class='yuding'>{{item.bookingNum}}人预订</view>
+                <image lazy-load="{{true}}" mode='aspectFill' src="{{item.venueCoverImageIds}}"></image>
+                <view class='text'>
+                  <view class='text-con'>
+                    <text class="money">¥{{item.realPrice}}起</text>
+                    <text class='nums'>可容纳{{item.capacity}}人</text>
+                  </view>
+                </view>
+              </view>
+              <view class='info-con'>
+                <view class='info-cons'>
+                  <text class='info-tit text-1-eclips'>{{item.name}}</text>
+                  <view class='info-item info-item-f'>
+                    <text class='info-ico yeallow'>位置</text>
+                    <view>{{item.address}}</view>
+                  </view>
+                  <view class='info-item'>
+                    <text class='info-ico mainBgColor'>特色</text>
+                    <view>{{item.features}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{!hasMore}}" class='no-more'>已经到底了~</view>
+    </block>
+
+    <view class='book' bindtap='booking'>
+      <view class='book-con'>
+        <text>预订</text>
+        <text>热线</text>
+      </view>
+    </view>
+  </block>
+  
+  <view wx:else class='no-render'>
+      <image src='../../images/icons/ej_kym@3x.svg' mode='aspectFit' class='icon'></image>
+      <text class='text'>暂无数据</text>
+  </view>
+</view>
+
+
+

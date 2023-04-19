@@ -1,0 +1,114 @@
+<view class='head'>
+  <image class='cover' src='{{banner}}' mode='widthFix'></image>
+  <!-- <image class='cover' src='https://mall.xpaik.com/photoServer/xpaikmall/gg@3x-min.jpg' mode='widthFix'></image> -->
+</view>
+
+<view class='group'>
+  <!-- <view class='cell xpk-1px-b'>
+    <text class='label'>商户logo</text>
+    <view class='main-content' bindtap='selectImg' data-item='business_Logo_Image_Id'>
+      <view class='spot'></view>
+      <view class='logo' wx:if="{{imgAry.business_Logo_Image_Id == ''}}">
+        <image class='d-logo' src='../../images/icons/dp@3x.svg' mode='widthFix'></image>
+      </view>
+      <image wx:else src='{{imgAry.business_Logo_Image_Id}}' class='s-logo' mode='aspectFit'></image>
+    </view>
+    <text class='icon-xyb'></text>
+  </view> -->
+  <view class='cell xpk-1px-b'>
+    <text class='label'>商户名称</text>
+    <view class='main-content'>
+      <input class='data-input' placeholder='请填写' bindblur='infoBlur' data-key='name'></input>
+    </view>
+  </view>
+  <!-- <view class='cell'>
+    <text class='label'>商户分类</text>
+    <view class='main-content'>
+      <picker class='classify' range='{{classify}}' range-key='name' bindchange='selectClassify'>
+        <view class='content'>
+          <text wx:if="{{classifyText == ''}}" class='text null'>请选择</text>
+          <text wx:else class='text'>{{classifyText}}</text>
+          <text class='icon-xyb'></text>
+        </view>
+      </picker>
+    </view>
+  </view> -->
+</view>
+
+<view class='group'>
+  <view class='cell xpk-1px-b'>
+    <text class='label'>联系人姓名</text>
+    <view class='main-content'>
+      <input class='data-input' placeholder='请填写' cursor-spacing='{{10}}' bindblur='infoBlur' data-key='contactsName'></input>
+    </view>
+  </view>
+  <view class='cell'>
+    <text class='label'>联系人手机号</text>
+    <view class='main-content'>
+      <input
+        class='data-input'
+        maxlength='11'
+        placeholder='请填写'
+        type='number'
+        bindblur='infoBlur'
+        data-key='phone'
+        cursor-spacing='{{10}}'>
+      </input>
+    </view>
+  </view>
+  <!-- <view class='cell'>
+    <text class='label'>联系人邮箱</text>
+    <view class='main-content'>
+      <input
+        class='data-input'
+        placeholder='请填写联系人邮箱'
+        bindblur='infoBlur' data-key='contactsEmail'
+        cursor-spacing='{{10}}'>
+        </input>
+    </view>
+  </view> -->
+</view>
+
+<!-- <view class='img-group'>
+  <view class='title'>营业执照</view>
+  <view class='main'>
+    <view wx:if='{{imgAry.business_License_Image_Id == ""}}' class='is-null'  bindtap='selectImg' data-item='business_License_Image_Id'>
+      <image class='icon-add' src='../../images/icons/tx_tjz@3x.svg' mode='widthFix'></image>
+      <text class='text'>添加照片</text>
+    </view>
+    <view wx:else class='resource' bindtap='preview' data-item='business_License_Image_Id'>
+      <image src='{{imgAry.business_License_Image_Id}}' mode='aspectFill' class='img'></image>
+      <image class='close' src='../../images/icons/gb@3x.svg' mode='widthFix' catchtap='deleteImg' data-item='business_License_Image_Id'></image>
+    </view>
+  </view>
+</view>
+
+<view class='img-group' style='margin-top: 16rpx;'>
+  <view class='title'>开户许可证（选填）</view>
+  <view class='main'>
+    <view wx:if='{{!imgAry.business_Permit_Image_Id}}' class='is-null' bindtap='selectImg' data-item='business_Permit_Image_Id'>
+      <image class='icon-add' src='../../images/icons/tx_tjz@3x.svg' mode='widthFix'></image>
+      <text class='text'>添加照片</text>
+    </view>
+    <view wx:else class='resource' bindtap='preview' data-item='business_Permit_Image_Id'>
+      <image src='{{imgAry.business_Permit_Image_Id}}' mode='aspectFill' class='img'></image>
+      <image class='close' src='../../images/icons/gb@3x.svg' mode='widthFix' catchtap='deleteImg' data-item='business_Permit_Image_Id'></image>
+    </view>
+  </view>
+</view>
+ -->
+<!-- <view class='agreement'>
+  <image class='icon' src='../../images/sample/fkcg@3x.svg' mode='widthFix'></image>
+  <text class='text'>开通即代表同意</text>
+  <text class='text colorful' bindtap='enterPage' data-link='../contract/contract'>《悠易游商户入驻协议》</text>
+</view> -->
+
+<view class='page-spot'></view>
+
+<view class='footer-bar'>
+  <view class='left' bindtap='callPhone'>
+    <image class='icon' src='../../images/sample/kfrx@3x.svg' mode='widthFix'></image>
+    <text class='text'>客服热线</text>
+  </view>
+  <view class='right mainBgColor' bindtap='open'>立即开通</view>
+</view>
